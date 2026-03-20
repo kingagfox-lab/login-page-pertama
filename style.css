@@ -16,7 +16,6 @@ body {
     overflow: hidden;
     position: relative;
 }
-
 .background {
     position: absolute;
     top: 0;
@@ -26,14 +25,13 @@ body {
     z-index: -1;
     overflow: hidden;
 }
-
 .mountainsLayer {
     position: absolute;
     bottom: 0px;
     left: 0;
     width: 100%;
     height: 40vh;
-    background:
+    background: 
         linear-gradient(to top, transparent, transparent),
         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%234b227a" d="M0,160L48,138.7C96,117,192,75,288,85.3C384,96,480,160,576,176C672,192,768,160,864,128C960,96,1056,64,1152,69.3C1248,75,1344,117,1392,138.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
     background-size: cover;
@@ -42,7 +40,6 @@ body {
     z-index: 2;
     animation: drift 20s ease-in-out infinite alternate;
 }
-
 .treesLayer {
     position: absolute;
     bottom: 0;
@@ -58,15 +55,9 @@ body {
 }
 
 @keyframes drift {
-    0% {
-        transform: translateX(0) scale(1.05);
-    }
-
-    100% {
-        transform: translateX(-15px) scale(1.05);
-    }
+    0% { transform: translateX(0) scale(1.05); }
+    100% { transform: translateX(-15px) scale(1.05); }
 }
-
 .stars {
     position: absolute;
     width: 100%;
@@ -75,26 +66,25 @@ body {
     z-index: 1;
 }
 
-.stars::before,
-.stars::after {
+.stars::before, .stars::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image:
-        radial-gradient(2px 2px at 40px 60px, #fff, rgba(255, 255, 255, 0)),
-        radial-gradient(1px 1px at 100px 150px, #fff, rgba(255, 255, 255, 0)),
-        radial-gradient(2px 2px at 200px 80px, #fff, rgba(255, 255, 255, 0)),
-        radial-gradient(1.5px 1.5px at 300px 200px, #fff, rgba(255, 255, 255, 0)),
-        radial-gradient(2px 2px at 400px 30px, #fff, rgba(255, 255, 255, 0)),
-        radial-gradient(1px 1px at 450px 250px, #fff, rgba(255, 255, 255, 0)),
-        radial-gradient(2px 2px at 600px 180px, #fff, rgba(255, 255, 255, 0)),
-        radial-gradient(1px 1px at 700px 50px, #fff, rgba(255, 255, 255, 0)),
-        radial-gradient(2px 2px at 800px 220px, #fff, rgba(255, 255, 255, 0)),
-        radial-gradient(1.5px 1.5px at 900px 100px, #fff, rgba(255, 255, 255, 0)),
-        radial-gradient(2px 2px at 1000px 280px, #fff, rgba(255, 255, 255, 0));
+    background-image: 
+        radial-gradient(2px 2px at 40px 60px, #fff, rgba(255,255,255,0)),
+        radial-gradient(1px 1px at 100px 150px, #fff, rgba(255,255,255,0)),
+        radial-gradient(2px 2px at 200px 80px, #fff, rgba(255,255,255,0)),
+        radial-gradient(1.5px 1.5px at 300px 200px, #fff, rgba(255,255,255,0)),
+        radial-gradient(2px 2px at 400px 30px, #fff, rgba(255,255,255,0)),
+        radial-gradient(1px 1px at 450px 250px, #fff, rgba(255,255,255,0)),
+        radial-gradient(2px 2px at 600px 180px, #fff, rgba(255,255,255,0)),
+        radial-gradient(1px 1px at 700px 50px, #fff, rgba(255,255,255,0)),
+        radial-gradient(2px 2px at 800px 220px, #fff, rgba(255,255,255,0)),
+        radial-gradient(1.5px 1.5px at 900px 100px, #fff, rgba(255,255,255,0)),
+        radial-gradient(2px 2px at 1000px 280px, #fff, rgba(255,255,255,0));
     background-repeat: repeat;
     background-size: 1100px 400px;
     opacity: 0.8;
@@ -110,19 +100,9 @@ body {
 }
 
 @keyframes twinkle {
-
-    0%,
-    100% {
-        opacity: 0.4;
-        transform: scale(0.98);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1.02);
-    }
+    0%, 100% { opacity: 0.4; transform: scale(0.98); }
+    50% { opacity: 1; transform: scale(1.02); }
 }
-
 .shooting-star {
     position: absolute;
     top: -50px;
@@ -135,19 +115,16 @@ body {
     z-index: 2;
     filter: drop-shadow(0 0 5px #fff);
 }
-
 .shooting-star:nth-child(2) {
     left: 20%;
     animation-delay: 1.5s;
     animation-duration: 5s;
 }
-
 .shooting-star:nth-child(3) {
     left: 70%;
     animation-delay: 2.8s;
     animation-duration: 4.5s;
 }
-
 .shooting-star:nth-child(4) {
     left: 90%;
     animation-delay: 0.5s;
@@ -159,24 +136,21 @@ body {
         transform: rotate(45deg) translateY(-200px);
         opacity: 1;
     }
-
     30% {
         opacity: 1;
     }
-
     100% {
         transform: rotate(45deg) translateY(1200px);
         opacity: 0;
     }
 }
-
 .wrapper {
     position: relative;
-    width: 440px;
+    width: 520px;
+    height: 540px;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
-    padding: 50px 50px;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
@@ -187,6 +161,8 @@ body {
     animation: popup 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     opacity: 0;
     transform: translateY(50px) scale(0.9);
+    overflow: hidden;
+    transition: height 0.3s ease;
 }
 
 @keyframes popup {
@@ -196,15 +172,44 @@ body {
     }
 }
 
+.wrapper.active {
+    height: 650px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 50px 60px;
+    transition: transform 0.4s ease;
+}
+
+.wrapper .form-box.login {
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transform: translateX(-520px);
+    position: absolute;
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    top: 0;
+    transform: translateX(520px);
+}
+
+.wrapper.active .form-box.register {
+    transform: translateX(0);
+}
+
 form {
     width: 100%;
 }
 
 .wrapper h2 {
-    font-size: 2.5em;
+    font-size: 2.8em;
     color: #fff;
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
     font-weight: 700;
     letter-spacing: 1px;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -213,19 +218,19 @@ form {
 .input-box {
     position: relative;
     width: 100%;
-    margin: 25px 0;
+    margin: 30px 0;
 }
 
 .input-box input {
     width: 100%;
-    height: 55px;
+    height: 60px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.4);
     outline: none;
     border-radius: 40px;
-    font-size: 1.05em;
+    font-size: 1.15em;
     color: #fff;
-    padding: 0 50px 0 25px;
+    padding: 0 55px 0 30px;
     transition: all 0.3s ease;
 }
 
@@ -242,10 +247,10 @@ form {
 
 .input-box ion-icon {
     position: absolute;
-    right: 20px;
+    right: 25px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.3em;
+    font-size: 1.4em;
     color: #fff;
     opacity: 0.9;
 }
@@ -253,9 +258,9 @@ form {
 .remember-forgot {
     display: flex;
     justify-content: space-between;
-    font-size: 0.9em;
+    font-size: 1em;
     color: #fff;
-    margin: -10px 0 25px;
+    margin: -10px 0 30px;
 }
 
 .remember-forgot label {
@@ -268,12 +273,12 @@ form {
 .remember-forgot label input {
     appearance: none;
     -webkit-appearance: none;
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     background: transparent;
     border: 2px solid #fff;
     border-radius: 3px;
-    margin-right: 8px;
+    margin-right: 10px;
     outline: none;
     cursor: pointer;
     position: relative;
@@ -290,8 +295,8 @@ form {
 .remember-forgot label input:checked::after {
     content: '';
     position: absolute;
-    width: 4px;
-    height: 8px;
+    width: 5px;
+    height: 10px;
     border-right: 2px solid #724098;
     border-bottom: 2px solid #724098;
     transform: rotate(45deg);
@@ -307,19 +312,19 @@ form {
 
 .remember-forgot a:hover {
     text-decoration: underline;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
 }
 
 .btn {
     width: 100%;
-    height: 50px;
+    height: 60px;
     background: #fff;
     border: none;
     outline: none;
     border-radius: 40px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    font-size: 1.1em;
+    font-size: 1.25em;
     color: #333;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -335,7 +340,7 @@ form {
     left: 50%;
     width: 300%;
     height: 300%;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255,255,255,0.5);
     border-radius: 50%;
     transform: translate(-50%, -50%) scale(0);
     opacity: 0;
@@ -360,10 +365,10 @@ form {
 }
 
 .register-link {
-    font-size: 0.9em;
+    font-size: 1em;
     color: #fff;
     text-align: center;
-    margin: 30px 0 10px;
+    margin: 35px 0 10px;
 }
 
 .register-link p a {
@@ -376,12 +381,12 @@ form {
 
 .register-link p a:hover {
     text-decoration: underline;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
 }
 
-@media(max-width: 480px) {
+@media(max-width: 540px) {
     .wrapper {
-        width: 90%;
-        padding: 40px 30px;
+        width: 95%;
+        height: auto;
     }
 }
