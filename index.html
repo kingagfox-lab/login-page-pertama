@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,26 +24,100 @@
     </div>
 
     <div class="wrapper">
-        <form action="#" method="post">
-            <h2>Login</h2>
-            <div class="input-box">
-                <input type="text" name="username" placeholder="Username" required>
-                <ion-icon name="person"></ion-icon>
-            </div>
-            <div class="input-box">
-                <input type="password" name="password" placeholder="Password" required>
-                <ion-icon name="lock-closed"></ion-icon>
-            </div>
-            <div class="remember-forgot">
-                <label><input type="checkbox" id="rememberMe"> Remember me</label>
-                <a href="#">Forgot Password?</a>
-            </div>
-            <button type="submit" class="btn">Login</button>
-            <div class="register-link">
-                <p>Don't have an account? <a href="#">Register</a></p>
-            </div>
-        </form>
+        <div class="form-box login">
+            <form action="#" method="post" id="loginForm">
+                <h2>Login</h2>
+                <div class="input-box">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <ion-icon name="mail"></ion-icon>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <ion-icon name="eye-off" class="toggle-password" style="cursor: pointer;"></ion-icon>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox" id="rememberMe"> Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="register-link">
+                    <p>Don't have an account? <a href="#" class="register-link-btn">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <form action="#" method="post">
+                <h2>Registration</h2>
+                <div class="input-box">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <ion-icon name="person"></ion-icon>
+                </div>
+                <div class="input-box">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <ion-icon name="mail"></ion-icon>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <ion-icon name="eye-off" class="toggle-password" style="cursor: pointer;"></ion-icon>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox" required> I agree to the terms</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="register-link">
+                    <p>Already have an account? <a href="#" class="login-link-btn">Login</a></p>
+                </div>
+            </form>
+        </div>
     </div>
+
+    <script>
+        const wrapper = document.querySelector('.wrapper');
+        const loginLink = document.querySelector('.login-link-btn');
+        const registerLink = document.querySelector('.register-link-btn');
+        const loginForm = document.getElementById('loginForm');
+        const database = [
+            { email: 'kingagfox@gmail.com', password: 'kingagfoxx1234' }
+        ];
+
+        registerLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            wrapper.classList.add('active');
+        });
+
+        loginLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            wrapper.classList.remove('active');
+        });
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = loginForm.querySelector('input[name="email"]').value;
+            const password = loginForm.querySelector('input[name="password"]').value;
+
+            const userExists = database.some(user => user.email === email && user.password === password);
+
+            if (userExists) {
+                alert('login succesfully');
+                window.open('https://kingagfox-lab.github.io/porto-2.0/', '_blank');
+            } else {
+                alert('Invalid email or password.');
+            }
+        });
+        const togglePasswords = document.querySelectorAll('.toggle-password');
+        togglePasswords.forEach(icon => {
+            icon.addEventListener('click', () => {
+                const input = icon.previousElementSibling;
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.setAttribute('name', 'eye');
+                } else {
+                    input.type = 'password';
+                    icon.setAttribute('name', 'eye-off');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
